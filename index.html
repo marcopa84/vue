@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-5">
+                <input type="text" name="" id="" placeholder="Inserisci un nuovo todo" v-model='newTodo'>
+                <button class="btn btn-primary" @click='savetodo'>Salva</button>
+                <div class="alert alert-secondary d-flex justify-content-between mt-2" role="alert" v-for="(todo, index) in todos">
+                    <div class="text flex-grow-1">
+                        {{todo.text}}
+                    </div>
+                    <div class="commands">
+                        <button class="btn btn-success btn-sm" v-if="todo.done">
+                            Done
+                        </button>
+                        <button class="btn btn-danger btn-sm" v-if="!todo.done">
+                            To do
+                        </button>
+                        <button class="btn btn-secondary btn-sm _close">
+                            X
+                        </button>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
